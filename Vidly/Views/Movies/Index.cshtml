@@ -15,17 +15,15 @@ else
 {
     <table class="table table-bordered">
         <tr>
-            <th>
-                Movie
-            </th>
+            <th>Movie</th>
+            <th>Genre</th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @item.Name
-                </td>
+                <td>@Html.ActionLink(item.Name, "Details", new {Id = item.Id})</td>
+                <td>@item.Genre.Name</td>
             </tr>
         }
 
