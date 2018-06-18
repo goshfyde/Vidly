@@ -1,4 +1,5 @@
 ﻿@using Microsoft.Ajax.Utilities
+@using Vidly.Models
 @model IEnumerable<Vidly.Models.Customer>
 
 @{
@@ -16,16 +17,14 @@ else
 {
     <table class="table table-bordered">
         <tr>
-            <th>
-                Customer
-            </th>
+            <th>Customer</th>
+            <th>Discount Rate</th>
         </tr>
 
         @foreach (var item in Model) {
             <tr>
-                <td>
-                    @Html.ActionLink(item.Name, "Details", new {id = item.Id})
-                </td>
+                <td>@Html.ActionLink(item.Name, "Details", new {id = item.Id})</td>
+                <td>@item.MembershipType.DiscountRate%</td>
             </tr>
         }
 
