@@ -95,11 +95,10 @@ namespace Vidly.Controllers
                 _context.Movies.Add(movie);
             else
             {
-                //var movieIn = _context.Customers.Single(c => c.Id == customer.Id);
-                //customerInDb.Name = customer.Name;
-                //customerInDb.BirthDate = customer.BirthDate;
-                //customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                //customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
