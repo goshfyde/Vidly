@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201806191712412_UpdateMovieGenreIdType.Designer.cs">
       <DependentUpon>201806191712412_UpdateMovieGenreIdType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806211608414_MovieValidation1.cs" />
+    <Compile Include="Migrations\201806211608414_MovieValidation1.Designer.cs">
+      <DependentUpon>201806211608414_MovieValidation1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -416,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806191712412_UpdateMovieGenreIdType.resx">
       <DependentUpon>201806191712412_UpdateMovieGenreIdType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211608414_MovieValidation1.resx">
+      <DependentUpon>201806211608414_MovieValidation1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
