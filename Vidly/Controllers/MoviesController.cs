@@ -34,32 +34,13 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-        // GET: Movies
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shrek!"};
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer 1"},
-                new Customer {Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(viewModel);
-        }
 
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
             var genreList = _context.Genres.ToList();
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = genreList
             };
 
@@ -70,19 +51,12 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{1}|d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
-
         public ActionResult New()
         {
             var genreList = _context.Genres.ToList();
 
             var viewModel = new MovieFormViewModel
             {
-                Movie = new Movie() { ReleaseDate = DateTime.Today},
                 Genres = genreList
             };
 
@@ -96,9 +70,8 @@ namespace Vidly.Controllers
             if (!ModelState.IsValid)
             {
                 var genreList = _context.Genres.ToList();
-                var viewModel = new MovieFormViewModel
+                var viewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = movie,
                     Genres = genreList
                 };
                 return View("MovieForm", viewModel);
