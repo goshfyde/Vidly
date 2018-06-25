@@ -39,7 +39,7 @@
 
         $(document).ready(function () {
 
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -57,7 +57,7 @@
                     {
                         data: "id",
                         render: function(data) {
-                            return "<button class='btn btn-link js-delete' data-customer-id" +
+                            return "<button class='btn btn-link js-delete' data-customer-id=" +
                                 data +
                                 ">Delete</button>";
                         }
@@ -77,8 +77,9 @@
                                 $.ajax({
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     method: "DELETE",
-                                    success: function() {
-                                        button.parents("tr").remove();
+                                    success: function () {
+                                        console.log("Success");
+                                        table.row(button.parents("tr")).remove().draw();
                                     }
                                 });
                             }
