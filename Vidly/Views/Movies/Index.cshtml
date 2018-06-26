@@ -9,25 +9,27 @@
 
 @Html.ActionLink("New Movie", "New", null, new {@class="btn btn-primary mb-2"})
 
-<table class="table table-bordered" id="MovieTable">
-    <thead>
-    <tr>
-        <th>Movie</th>
-        <th>Genre</th>
-        <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    @*@foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.ActionLink(item.Name, "Edit", new {Id = item.Id})</td>
-            <td>@item.Genre.Name</td>
-            <td><button class="btn btn-link js-delete" data-movie-id="@item.Id">Delete</button></td>
-        </tr>
-    }*@
-    </tbody>
-</table>
+<div class ="container">
+    <table class="table table-bordered" id="MovieTable">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Genre</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.Name, "Edit", new {Id = item.Id})</td>
+                        <td>@item.Genre.Name</td>
+                        <td><button class="btn btn-link js-delete" data-movie-id="@item.Id">Delete</button></td>
+                    </tr>
+                }*@
+        </tbody>
+    </table>
+</div>
 
 @section scripts{
     <script>
