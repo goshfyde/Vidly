@@ -19,14 +19,6 @@
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@Html.ActionLink(item.Name, "Edit", new {Id = item.Id})</td>
-                        <td>@item.Genre.Name</td>
-                        <td><button class="btn btn-link js-delete" data-movie-id="@item.Id">Delete</button></td>
-                    </tr>
-                }*@
         </tbody>
     </table>
 </div>
