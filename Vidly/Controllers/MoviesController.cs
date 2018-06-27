@@ -88,6 +88,7 @@ namespace Vidly.Controllers
                 movieInDb.Name = movie.Name;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.NumberInStock = movie.NumberInStock;
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
