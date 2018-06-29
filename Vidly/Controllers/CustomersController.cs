@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
@@ -68,6 +69,14 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
+            //if (MemoryCache.Default["Genres"] == null)
+            //{
+            //    MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            //}
+
+            //var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+            //Cacheing should only be implemented after performance analytics, adds complexity.
+
             if(User.IsInRole(RoleName.CanManageCustomers))
                 return View("List");
             return View("ReadOnlyList");
