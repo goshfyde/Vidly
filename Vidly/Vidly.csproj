@@ -342,6 +342,10 @@
     <Compile Include="Migrations\201807021732284_AddNumberAvailableToMovie.Designer.cs">
       <DependentUpon>201807021732284_AddNumberAvailableToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807021743047_AddNumberAvailable.cs" />
+    <Compile Include="Migrations\201807021743047_AddNumberAvailable.Designer.cs">
+      <DependentUpon>201807021743047_AddNumberAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -771,6 +775,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807021732284_AddNumberAvailableToMovie.resx">
       <DependentUpon>201807021732284_AddNumberAvailableToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021743047_AddNumberAvailable.resx">
+      <DependentUpon>201807021743047_AddNumberAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
