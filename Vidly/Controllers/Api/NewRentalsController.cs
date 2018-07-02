@@ -4,23 +4,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
 {
-    public class RentalController : ApiController
+    public class NewRentalsController : ApiController
     {
         public ApplicationDbContext _context { get; set; }
 
-        public RentalController()
+        public NewRentalsController()
         {
             _context = new ApplicationDbContext();
         }
 
         [HttpPost]
-        public IHttpActionResult CreateRental(int customerId, int movieId)
+        public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
-            return Ok();
+            throw new NotImplementedException();
         }
     }
 }
