@@ -6,7 +6,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-<form>
+<form id="newRental">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
@@ -51,14 +51,15 @@
             $('#customer').typeahead({
                     minLength: 3,
                     highlight: true
-            },
-            {
+                },
+                {
                     name: 'customers',
                     display: 'name',
                     source: customers
-            }).on("typeahead:select", function(e, customer) {
-                vm.customerId = customer.id;
-            });
+                }).on("typeahead:select",
+                function(e, customer) {
+                    vm.customerId = customer.id;
+                });
 
 
             var movies = new Bloodhound({
@@ -73,14 +74,29 @@
             $('#movie').typeahead({
                     minLength: 3,
                     highlight: true
-            },{
-                name: 'movies',
-                display: 'name',
-                source: movies
-            }).on("typeahead:select", function (e, movie) {
-                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
-                $("#movie").typeahead("val", "");
-                vm.movieIds.push(movie.id);
+                },
+                {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select",
+                function(e, movie) {
+                    $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+                    $("#movie").typeahead("val", "");
+                    vm.movieIds.push(movie.id);
+                });
+
+            $("#newRental").submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "/api/newrentals",
+                    method: "post",
+                    data: vm
+                })
+                .done(function() {
+                    console.log("done");
+                })
+                .fail();
             });
         });
     </script>
