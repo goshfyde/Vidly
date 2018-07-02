@@ -18,9 +18,8 @@ namespace Vidly.Models
         public Movie Movie { get; set; }
         public int MovieId { get; set; }
 
-        [Required]
         public DateTime DateRented { get; set; }
 
-        public DateTime DateReturned { get; set; }
+        public DateTime? DateReturned { get; set; }
     }
 }

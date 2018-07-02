@@ -334,6 +334,10 @@
     <Compile Include="Migrations\201807021656488_AddRental.Designer.cs">
       <DependentUpon>201807021656488_AddRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807021659255_ModifiedRentalToMatchMosh.cs" />
+    <Compile Include="Migrations\201807021659255_ModifiedRentalToMatchMosh.Designer.cs">
+      <DependentUpon>201807021659255_ModifiedRentalToMatchMosh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -757,6 +761,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807021656488_AddRental.resx">
       <DependentUpon>201807021656488_AddRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021659255_ModifiedRentalToMatchMosh.resx">
+      <DependentUpon>201807021659255_ModifiedRentalToMatchMosh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
