@@ -30,7 +30,8 @@ namespace Vidly.Controllers.Api
                 Console.WriteLine(query);
                 movies = movies.Where(m => m.Name.Contains(query));
             }
-                
+
+            movies = movies.Where(m => m.NumberAvailable > 0);
 
             var movieDtos = movies.ToList()
                 .Select(Mapper.Map<Movie,MovieDto>);
