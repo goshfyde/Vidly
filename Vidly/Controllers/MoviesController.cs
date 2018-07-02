@@ -81,7 +81,10 @@ namespace Vidly.Controllers
             }
 
             if (movie.Id == 0)
+            {
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
@@ -89,6 +92,7 @@ namespace Vidly.Controllers
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.NumberInStock = movie.NumberInStock;
+                //ToDo: Edgecase, change number in stock needs to change # available.
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");

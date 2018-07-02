@@ -21,16 +21,18 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
-            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == newRental.CustomerId);
-            IEnumerable<Movie> movieList = 
-                from movie in _context.Movies
-                where newRental.MovieIds.Contains(movie.Id)
-                select movie;
-            foreach (Movie movie in movieList)
+            var customerInDb = _context.Customers.Single(c => c.Id == newRental.CustomerId);
+            var movies = _context.Movies.Where(m => newRental.MovieIds.Contains(m.Id));
+            foreach (var movie in movies)
             {
-                Rental rental = new Rental() {Customer = customerInDb, Movie = movie};
-                rental.DateRented = DateTime.Today;
+                var rental = new Rental
+                    {
+                        Customer = customerInDb,
+                        Movie = movie,
+                        DateRented = DateTime.Now
+                    };
                 _context.Rentals.Add(rental);
+                movie.NumberAvailable--;
             }
 
             _context.SaveChanges();

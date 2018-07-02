@@ -338,6 +338,10 @@
     <Compile Include="Migrations\201807021659255_ModifiedRentalToMatchMosh.Designer.cs">
       <DependentUpon>201807021659255_ModifiedRentalToMatchMosh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807021732284_AddNumberAvailableToMovie.cs" />
+    <Compile Include="Migrations\201807021732284_AddNumberAvailableToMovie.Designer.cs">
+      <DependentUpon>201807021732284_AddNumberAvailableToMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -764,6 +768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807021659255_ModifiedRentalToMatchMosh.resx">
       <DependentUpon>201807021659255_ModifiedRentalToMatchMosh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021732284_AddNumberAvailableToMovie.resx">
+      <DependentUpon>201807021732284_AddNumberAvailableToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
