@@ -6,8 +6,9 @@
 
     <div class="collapse navbar-collapse" id="collapsable" style="">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">@Html.ActionLink("Customers", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })</li>
-            <li class="nav-item">@Html.ActionLink("Movies", "Index", "Movies", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav-item">@Html.ActionLink("New Rental", "New", "Rentals", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav-item">@Html.ActionLink("Customers", "Index", "Customers", new {area = ""}, new {@class = "nav-link"})</li>
+            <li class="nav-item">@Html.ActionLink("Movies", "Index", "Movies", new {area = ""}, new {@class = "nav-link"})</li>
         </ul>
         @Html.Partial("_LoginPartial")
 
